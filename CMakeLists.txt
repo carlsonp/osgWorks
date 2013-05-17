@@ -169,7 +169,7 @@ if( DOXYGEN_FOUND )
     configure_file( ${PROJECT_SOURCE_DIR}/doc/doxyfile.cmake
         ${PROJECT_BINARY_DIR}/doc/doxyfile
     )
-    add_custom_target( Documentation ${DOXYGEN_EXECUTABLE}
+    add_custom_target( OSGWorks_Documentation ${DOXYGEN_EXECUTABLE}
         ${PROJECT_BINARY_DIR}/doc/doxyfile
     )
     
