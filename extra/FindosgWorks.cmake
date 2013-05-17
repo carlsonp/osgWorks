@@ -17,9 +17,12 @@
 #             or the lib directory.  This is the 
 #             only cache entry.
 
-
-# Assume not found.
-SET(osgWorks_FOUND 0)
+# In situations in which osgWorks will be built later and we want to override this CMake variable,
+# this check is necessary.
+IF(NOT osgWorks_FOUND)
+	# Assume not found.
+	SET(osgWorks_FOUND FALSE BOOL)
+ENDIF(NOT osgWorks_FOUND)
 
 # Construct consitent error messages for use below.
 SET(osgWorks_DIR_DESCRIPTION "directory containing osgWorksConfig.cmake.  This is either the root of the build tree, or PREFIX/lib for an installation.")
