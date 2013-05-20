@@ -2,6 +2,7 @@
 # The following variables are set if osgWorks is found.  If osgWorks is not
 # found, osgWorks_FOUND is set to false.
 #  osgWorks_FOUND         - Set to true when osgWorks is found.
+#  osgWorks_USE_FILE      - CMake file to use osgWorks.
 #  osgWorks_MAJOR_VERSION - The osgWorks major version number.
 #  osgWorks_MINOR_VERSION - The osgWorks minor version number 
 #                       (odd non-release).
