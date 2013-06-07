@@ -68,7 +68,20 @@ ENDIF()
 
 include( CMakeMacros )
 
-include( FindOSGHelper )
+find_package( OpenSceneGraph 2.6.1 REQUIRED COMPONENTS osgGA osgText osgViewer osgSim osgDB osgUtil osg OpenThreads )
+if( OPENSCENEGRAPH_INCLUDE_DIRS )
+	message(STATUS "Adding OSG include directories: ${OPENSCENEGRAPH_INCLUDE_DIRS}")
+	include_directories(${OPENSCENEGRAPH_INCLUDE_DIRS})
+else()
+	message(FATAL_ERROR "Unable to find OpenSceneGraph include directory.")
+endif()
+if( OPENSCENEGRAPH_LIBRARIES )
+	message(STATUS "OSG libraries: ${OPENSCENEGRAPH_LIBRARIES}")
+	list(APPEND CMAKE_LIBRARY_PATH ${OPENSCENEGRAPH_LIBRARIES})
+	link_directories(${OPENSCENEGRAPH_LIBRARIES})
+else()
+	message(FATAL_ERROR "Unable to find OpenSceneGraph libraries.")
+endif()
 
 find_package( OpenGL )
 
