@@ -239,6 +239,9 @@ include( CMakePackageConfigHelpers )
 # Create the osgWorksConfig.cmake and osgWorksConfigVersion files
 file(RELATIVE_PATH CONF_REL_INCLUDE_DIR "${CMAKE_INSTALL_PREFIX}/lib"
    "${CMAKE_INSTALL_PREFIX}/include")
+   
+# Copy over generated Version.h header into install location
+file(COPY "${PROJECT_SOURCE_DIR}/include/osgwTools/Version.h" DESTINATION "${CMAKE_INSTALL_PREFIX}/include/osgwTools/")
 
 configure_package_config_file( 
     osgWorksConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/lib/osgWorksConfig.cmake
